@@ -62,6 +62,10 @@
       padding: 10px;
   }
 
+  .resContainer {
+      margin: 20px;
+  }
+
 
 .cards{
     display: flex;
@@ -93,3 +97,72 @@
     margin-top: 140px;
 }
  
+.location {
+  margin-left: 20px;
+}
+
+.travel-time {
+  padding-top: 10px;
+}
+
+.restaDetails{
+  border-radius: 15px; /* Adjust the value to control the curvature */
+  border: 2px solid black; /* Optional: Add a border */
+  padding: 20px; 
+  margin: 20px;
+  background-color: whitesmoke;
+}
+
+.border {
+  border-radius: 15px;
+  border: 2px solid black; 
+  margin: 80px;
+  background-color: #f0f0f0;
+}
+
+.menu-filter {
+  margin-left: 100px;
+}
+
+.recommended {
+  border-radius: 15px;
+  border: 2px solid black; 
+  margin: 100px;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.recom-list {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black; 
+  margin: 0 auto; /* Center the underline */
+  width: 60%; /* Adjust the width of the underline */
+  margin-bottom: 10px;
+}
+
+.recom-list:hover {
+  background-color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.rec-item-img {
+  width:150px;
+  height:120px
+}
+
+.veg-nonveg {
+  height: 40px;
+  width: 80px;
+}
+
+.veg-nonveg:active {
+  height: 40px;
+  width: 80px;
+  background-color: red;
+}
+
+.veg-nonveg:hover{
+  cursor: pointer;
+}
