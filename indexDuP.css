@@ -1,0 +1,213 @@
+.headingContainer {
+  display: flex;  
+  justify-content: space-between;
+  border: 1PX solid black;
+  height: 100px;
+  background-color: brown;
+  color: #f8f8f8;
+  box-sizing: border-box;
+}
+/* 
+.nav-list  ul {
+  display: inline-block;
+  margin-right: 10px;
+} */
+.form {
+    padding-top: 7px;
+}
+.input {
+    height: 25px;
+}
+.search{
+    height: 25px;
+    margin-left: 5px;
+}
+.search:hover{
+    cursor: pointer;
+}
+.searchContainer{
+  padding: 10px 0px 10px 10px;
+  display: flex;
+}
+.nav-list li {
+    float: left;
+    margin-right: 80px;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .btn {
+    margin-right: 80px;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .btn:hover{
+      cursor: pointer;
+  }
+
+  .nav-list ul {
+    list-style: none;
+    color: inherit; /* Use the same color as the parent */
+  text-decoration: none; /* Remove underline */
+  cursor: default;
+  }
+
+  .image {
+      width: 200px;
+  }
+  .rated-btn {
+      margin: 10px;
+      cursor: pointer;
+      font-size: 15px;
+      background-color: #f0f0f0; 
+  }
+
+
+  .cardImage{
+      width: 230px;
+      height: 230px;
+      padding: 10px;
+  }
+
+  .resContainer {
+      background-color: bisque;
+  }
+
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    /* color: inherit; */
+
+}
+  .restCardContainer:hover {
+    cursor: pointer;
+    background-color: burlywood;
+    border: 1px solid black;
+  }
+
+  .plain-text {
+    text-decoration: none; /* Remove underline */
+    color: inherit; 
+  }
+
+  .restCardContainer {
+    background-color: brown;
+    color: white;
+    width: 250px;
+    border-radius: 10px;
+    height: 400px;
+    margin: 10px;
+  }
+
+  .placeholderContainer {
+      display: flex;
+
+  }
+
+  .placeholder {
+    background-color: #f0f0f0;
+    width: 450px;
+    height: 400px;
+    margin: 10px;
+    margin-top: 140px;
+}
+ 
+.location {
+  margin-left: 20px;
+}
+
+.travel-time {
+  padding-top: 10px;
+}
+
+.restaDetails{
+  border-radius: 15px; /* Adjust the value to control the curvature */
+  border: 2px solid black; /* Optional: Add a border */
+  padding: 20px; 
+  margin: 20px;
+  background-color: whitesmoke;
+}
+
+.border {
+  border-radius: 15px;
+  border: 2px solid black; 
+  margin: 0px 80px 0px 80px;
+  background-color: #f0f0f0;
+}
+.menu {
+  background-color: bisque;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.menu-filter {
+  margin-left: 100px;
+  padding-top: 50px;
+}
+
+.recommended {
+  border-radius: 15px;
+  border: 2px solid black; 
+  margin: 100px;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.recom-list {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black; 
+  margin: 0 auto; /* Center the underline */
+  width: 60%; /* Adjust the width of the underline */
+  margin-bottom: 10px;
+}
+
+.recom-list:hover {
+  background-color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.rec-item-img {
+  width:150px;
+  height:120px
+}
+
+.veg-nonveg {
+  height: 40px;
+  width: 80px;
+}
+
+.veg-nonveg:active {
+  height: 40px;
+  width: 80px;
+  background-color: red;
+}
+
+.veg-nonveg:hover{
+  cursor: pointer;
+}
+
+.footer-container {
+  border: 1px solid black;
+  height: 85px;
+  background-color: brown;
+  color: white;
+}
+
+.footer-list ul {
+  list-style: none;
+  color: inherit; /* Use the same color as the parent */
+  text-decoration: none; /* Remove underline */
+  cursor: default;
+}
+
+.footer-list li {
+  float: left;
+  justify-content: space-between;
+  margin-right: 80px;
+  margin-top: 20px;
+  font-size: 20px;
+}

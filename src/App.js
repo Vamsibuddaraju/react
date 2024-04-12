@@ -23,8 +23,6 @@ const AppLayout = () =>{
     </div>
     )
 }
-
-
 const appRouter = createBrowserRouter([
     {
         path:"/",

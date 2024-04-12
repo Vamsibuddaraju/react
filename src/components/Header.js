@@ -5,10 +5,10 @@ import {Link} from "react-router-dom"
 const Header = () =>{
     const [btnValue,setBtnValue]=useState("Login");
     return (
-    <div className="headingContainer">
-        <img className="image" src={LOGO_URL} />
+    <div className="flex justify-between">
+        <img className="w-40" src={LOGO_URL} />
         <div className="nav-list">
-            <ul>
+            <ul className="flex p-4" >
                 <li><Link to="/home" style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link></li>
                 <li><Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About Us</Link></li>
                 <li><Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>Contact Us</Link></li>
