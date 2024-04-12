@@ -1,49 +1,11 @@
-import {useState,useEffect} from "react"
 import Shimmer from "./Shimmer";
-import {MENU_LOGO_URL,REST_MENU_URL} from "./../constants/constant"
+import {MENU_LOGO_URL,REST_MENU_URL} from "../utils/constant"
 import {useParams} from "react-router-dom"
+import useRestMenu from "../utils/useRestMenu";
 
 const RestMenu = () =>{
-    const [restInfo, setRestInfo] = useState(null);
-    const [Menu,setMenu]=useState(null);
-    const [filterMenu,setFilterMenu]=useState(null);
     const {id} = useParams();
-    console.log(id)
-        useEffect(()=>{
-            dataFetch()
-        },[])
-        const dataFetch = async () =>{
-            const data = await fetch(REST_MENU_URL+id);
-            const json = await data.json()
-            const findCard = json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards
-            console.log(findCard)
-            const digits = ()=>{
-                for(let i =0;i<findCard.length;i++){
-                    if(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[i].card.card.itemCards){
-                        return i;
-                    }
-                }
-            }
-            let digit = digits();
-            console.log(digit)
-            const {itemCards} = json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards[digit].card.card;
-            setRestInfo(json.data);
-            setMenu(itemCards)
-            setFilterMenu(itemCards)
-        }
-    const filterVeg = (flag) =>{
-        if(flag){
-            let filterData = Menu.filter((item)=>(
-                item.card?.info?.isVeg==1
-            ))
-            setFilterMenu(filterData)
-        }else{
-            let filterData = Menu.filter((item)=>(
-                item.card?.info?.isVeg!=1
-            ))
-            setFilterMenu(filterData)
-        }
-    }
+    const {filterVeg,Menu,restInfo,filterMenu} = useRestMenu(id) // custom Hook
     if(restInfo===null) return <Shimmer />;
     const {info} = restInfo?.cards[2]?.card?.card
 

@@ -1,6 +1,7 @@
 const RestCard = (props) =>{
     const {restaurantData} = props
     const {info} = restaurantData
+    console.log(info)
     // const cloudinaryImageId = restaurantData.card.card.info.cloudinaryImageId
     return(
         <>

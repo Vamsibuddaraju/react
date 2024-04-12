@@ -1,7 +1,8 @@
+import useNetworkStatus from "./../utils/useNetorkStatus"
 import RestCard from "./RestCard"
-import {restObj} from "./../constants/mockData"
 import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer"
+import {Link} from "react-router-dom"
 const Body = () =>{
     const [restaurantList,setrestaurantList]=useState([]);
     const [filterRestList,setFilterRestList]= useState([]);
@@ -18,7 +19,7 @@ const Body = () =>{
         const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.37240&lng=78.43780&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const dataJson =await data.json();
         const info = dataJson?.data?.cards
-        const filtering = info[4].card.card.gridElements.infoWithStyle.restaurants;
+        const filtering = info[1].card.card.gridElements.infoWithStyle.restaurants;
         console.log(filtering)
         setrestaurantList(filtering);
         setFilterRestList(filtering);
@@ -30,15 +31,23 @@ const Body = () =>{
         }))
     }
 
+    const status = useNetworkStatus();
+
+    if(status===false){
+        return (
+            <h3>It looks like you are offline</h3>
+        )
+    }
+
     if(restaurantList.length ===0){
        return <Shimmer />
     }
 
     return (
         <div className="resContainer">
-            <div className="searchContainer" style={{margin:"30px"}}>
+            <div className="searchContainer">
                 <form className="form">
-                    <input type="text" className="input" value={search} onChange={(e)=>{
+                    <input type="text" className="input" style={{width:"255px"}} value={search} onChange={(e)=>{
                         setSearch(e.target.value);
                     }}></input>
                     <button type="button" className="search" onClick={()=>{
@@ -53,7 +62,8 @@ const Body = () =>{
                 <button className="rated-btn"onClick={topRated}>Top rated Restaurants</button>
             </div>
             <div className="cards">
-                {filterRestList?.map(restaurant =><RestCard key={restaurant.info.id} restaurantData = {restaurant} />)}
+                {filterRestList?.map(restaurant =>
+                    <Link key={restaurant.info.id} className="plain-text" to={"/restaurant/"+restaurant.info.id}><RestCard restaurantData = {restaurant} /></Link>)}
             </div>
         </div>
     )
