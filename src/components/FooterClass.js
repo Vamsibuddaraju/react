@@ -6,14 +6,12 @@ class FooterClass extends React.Component{
     }
     render(){
         return (
-            <div className="footer-container">
-                <div className="footer-list">
-                    <ul>
-                        <li>Help</li>
-                        <li>courtesy</li>
-                        <li>Social Page</li>
+            <div className="w-[100%] h-24 bg-slate-600">
+                    <ul className="flex text-white">
+                        <li className="px-6 py-8">HELP</li>
+                        <li className="px-6 py-8">COURTSEY</li>
+                        <li className="px-6 py-8">SOCIAL-PAGE</li>
                     </ul>
-                </div>
             </div>
         )
     }
